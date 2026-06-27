@@ -111,7 +111,8 @@ export interface IAnalysis extends Document {
 
   red_flags: string[];
   honest_summary: string;
-
+  tone_feedback?: string;
+  ats_tips?: string[];
   createdAt: Date;
   updatedAt: Date;
 }
@@ -237,6 +238,8 @@ const AnalysisSchema = new Schema<IAnalysis>(
 
     red_flags: [String],
     honest_summary: { type: String, required: true },
+    tone_feedback: { type: String },
+    ats_tips: [String],
   },
   { timestamps: true, versionKey: false }
 );
